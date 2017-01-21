@@ -1,10 +1,10 @@
-from pyramid.config import Configurator
+from pyramid.configure import Configurator
 
 def main(global_config, settings):
     config = Configurator(settings = settings)
     config.include('pyramid_jinja2')
     config.add_route('home', '/')
-    config.add_route('hello', '/howdo')
+    config.add_route('hello', '/world')
     config.scan('.views')
     return config.make_wsgi_app()
     
